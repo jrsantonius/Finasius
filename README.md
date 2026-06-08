@@ -11,7 +11,29 @@ lengkap dengan **keterangan diskon** dan **gambar promo**.
 pip install -r requirements.txt
 ```
 
-## Pemakaian
+## Dashboard interaktif (Streamlit)
+
+Cara termudah untuk memakai program ini: jalankan dashboard webnya.
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Lalu buka alamat yang ditampilkan (biasanya `http://localhost:8501`) di
+browser. Di sidebar kamu bisa memilih:
+
+- **Rentang tanggal** ("Dari tanggal" / "Sampai tanggal")
+- **Situs** (Giladiskon, Katalogpromosi, atau keduanya)
+- **Jumlah halaman** yang dijelajahi per situs
+- Opsi menyertakan promo yang periodenya tidak terbaca
+
+Klik **🔍 Cari Promo** dan dashboard akan menampilkan kartu untuk tiap promo
+yang berlaku pada rentang tanggal tersebut — lengkap dengan gambar, judul,
+periode, keterangan diskon, dan tautan ke artikel aslinya. Hasil scraping
+disimpan sementara (cache 30 menit) supaya mengganti rentang tanggal tidak
+perlu mengambil ulang data dari awal.
+
+## Pemakaian via command line
 
 ```bash
 python main.py --start 2026-06-01 --end 2026-06-30
